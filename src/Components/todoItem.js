@@ -9,6 +9,8 @@ const TodoItem = ({ todo }) => {
 					: 'formInput deleted'
 			}>
 			<h2>{todo?.name}</h2>
+			<button>Edit</button>
+			<button>Delete</button>
 		</div>
 	);
 };
