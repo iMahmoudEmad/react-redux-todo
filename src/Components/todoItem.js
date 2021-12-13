@@ -10,7 +10,7 @@ const TodoItem = ({ todo }) => {
 	return (
 		<div
 			className={
-				todo?.status == 'In Progress'
+				todo?.status === 'In Progress'
 					? 'formInput inProgress'
 					: 'formInput deleted'
 			}>
