@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addTodo } from '../redux/action';
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuid } from 'uuid';
 import styles from './todoInput.module.scss';
 
 const TodoInput = () => {
@@ -23,7 +23,7 @@ const TodoInput = () => {
 			<button
 				onClick={() => {
 					if (!isInputEmpty) {
-						dispatch(addTodo({ id: uuidv4(), name: todo }));
+						dispatch(addTodo({ id: uuid(), name: todo }));
 						setTodo('');
 					}
 					setIsInputEmpty(true);
