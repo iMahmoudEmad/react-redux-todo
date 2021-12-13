@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { deleteTodo, updateTodo } from '../redux/action';
+import styles from './todoItem.module.scss';
 
 const TodoItem = ({ todo }) => {
 	const [todoName, setTodoName] = useState(todo.name);
@@ -11,8 +12,8 @@ const TodoItem = ({ todo }) => {
 		<div
 			className={
 				todo?.status === 'In Progress'
-					? 'formInput inProgress'
-					: 'formInput deleted'
+					? `${styles.todoItem} inProgress`
+					: `${styles.todoItem} deleted`
 			}>
 			{editable ? (
 				<input

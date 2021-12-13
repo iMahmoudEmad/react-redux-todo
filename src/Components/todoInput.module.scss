@@ -1,0 +1,13 @@
+.formInput {
+	display: flex;
+	justify-content: space-between;
+	flex-basis: 100%;
+
+	input {
+		width: 80%;
+	}
+
+	button {
+		width: fit-content;
+	}
+}

@@ -1,10 +1,9 @@
-import TodoInput from './Components/todoInput';
 import TodoList from './Components/todoList';
+import styles from './app.module.scss';
 
 function App() {
 	return (
-		<main>
-			<TodoInput />
+		<main className={styles.parent}>
 			<TodoList />
 		</main>
 	);
