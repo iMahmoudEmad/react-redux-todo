@@ -1,6 +1,10 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { deleteTodo } from '../redux/action';
 
 const TodoItem = ({ todo }) => {
+	const dispatch = useDispatch();
+
 	return (
 		<div
 			className={
@@ -10,7 +14,7 @@ const TodoItem = ({ todo }) => {
 			}>
 			<h2>{todo?.name}</h2>
 			<button>Edit</button>
-			<button>Delete</button>
+			<button onClick={() => dispatch(deleteTodo(todo?.id))}>Delete</button>
 		</div>
 	);
 };
