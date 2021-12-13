@@ -1,4 +1,4 @@
-import { TODOS_CONSTANT } from './constans';
+import { TODOS_CONSTANT } from './constants';
 import { ADD_TODO, DELETE_TODO, UPDATE_TODO } from './types';
 
 export const reducer = (todos = TODOS_CONSTANT, { type, data }) => {
