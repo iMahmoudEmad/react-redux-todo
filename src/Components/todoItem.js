@@ -31,7 +31,16 @@ const TodoItem = ({ todo }) => {
 						type='text'
 						value={todoName}
 						placeholder={todo?.name}
-						onChange={(e) => setTodoName(e.target.value)}
+						onChange={(e) => {
+							dispatch(
+								updateTodo({
+									...todo,
+									name: todoName,
+									status,
+								})
+							);
+							setTodoName(e.target.value);
+						}}
 						autoFocus='on'
 					/>
 				) : (
