@@ -12,6 +12,6 @@ export const TODOS_CONSTANT = [
 	{
 		id: 3,
 		name: 'Third Todo',
-		status: 'Done',
+		status: 'In Progress',
 	},
 ];

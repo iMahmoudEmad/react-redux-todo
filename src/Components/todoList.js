@@ -13,7 +13,7 @@ const TodoList = () => {
 			{todos?.length ? (
 				todos?.map((todo) => <TodoItem key={todo?.id} todo={todo} />)
 			) : (
-				<h2>No Data!</h2>
+				<h2>Great you have finished you list!</h2>
 			)}
 		</div>
 	);
