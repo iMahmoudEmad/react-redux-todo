@@ -7,7 +7,7 @@ const TodoList = () => {
 	return (
 		<div className='formInput'>
 			{todos?.map((todo) => (
-				<TodoItem key={todo?.id} name={todo?.name} status={todo?.status} />
+				<TodoItem key={todo?.id} todo={todo} />
 			))}
 		</div>
 	);

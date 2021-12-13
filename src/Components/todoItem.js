@@ -1,12 +1,14 @@
 import React from 'react';
 
-const TodoItem = ({ name, status }) => {
+const TodoItem = ({ todo }) => {
 	return (
 		<div
 			className={
-				status == 'In Progress' ? 'formInput inProgress' : 'formInput deleted'
+				todo?.status == 'In Progress'
+					? 'formInput inProgress'
+					: 'formInput deleted'
 			}>
-			<h2>{name}</h2>
+			<h2>{todo?.name}</h2>
 		</div>
 	);
 };
