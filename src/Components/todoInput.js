@@ -6,20 +6,27 @@ import styles from './todoInput.module.scss';
 
 const TodoInput = () => {
 	const [todo, setTodo] = useState('');
+	const [isInputEmpty, setIsInputEmpty] = useState(true);
 	const dispatch = useDispatch();
 
 	return (
 		<div className={styles.formInput}>
 			<input
 				type='text'
-				placeholder='Enter Todo Name...'
+				placeholder='Enter Todo Name*'
 				value={todo}
-				onChange={(e) => setTodo(e.target.value)}
+				onChange={(e) => {
+					setTodo(e.target.value);
+					setIsInputEmpty(false);
+				}}
 			/>
 			<button
 				onClick={() => {
-					dispatch(addTodo({ id: uuidv4(), name: todo }));
-					setTodo('');
+					if (!isInputEmpty) {
+						dispatch(addTodo({ id: uuidv4(), name: todo }));
+						setTodo('');
+					}
+					setIsInputEmpty(true);
 				}}>
 				Add
 			</button>
