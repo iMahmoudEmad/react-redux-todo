@@ -13,7 +13,18 @@ export const reducer = (todos = TODOS_CONSTANT, { type, data }) => {
 			updatedTodos = updatedTodos.filter((todo) => todo.id !== data);
 			return updatedTodos;
 		case UPDATE_TODO:
-			break;
+			updatedTodos = [...todos];
+			let selectedTodoIdx = -1;
+			for (let idx = 0; idx < updatedTodos.length; idx++) {
+				selectedTodoIdx++;
+				if (updatedTodos[idx].id == data.id) break;
+			}
+
+			if (selectedTodoIdx != -1) {
+				updatedTodos[selectedTodoIdx] = data;
+
+				return updatedTodos;
+			}
 		default:
 			return todos;
 	}

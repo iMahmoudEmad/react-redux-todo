@@ -15,7 +15,11 @@ const TodoInput = () => {
 				value={todo}
 				onChange={(e) => setTodo(e.target.value)}
 			/>
-			<button onClick={() => dispatch(addTodo({ id: uuidv4(), name: todo }))}>
+			<button
+				onClick={() => {
+					dispatch(addTodo({ id: uuidv4(), name: todo }));
+					setTodo('');
+				}}>
 				Add
 			</button>
 		</div>

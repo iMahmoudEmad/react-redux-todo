@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { deleteTodo } from '../redux/action';
+import { deleteTodo, updateTodo } from '../redux/action';
 
 const TodoItem = ({ todo }) => {
+	const [todoName, setTodoName] = useState(todo.name);
+	const [editable, setEditable] = useState(false);
 	const dispatch = useDispatch();
 
 	return (
@@ -12,8 +14,31 @@ const TodoItem = ({ todo }) => {
 					? 'formInput inProgress'
 					: 'formInput deleted'
 			}>
-			<h2>{todo?.name}</h2>
-			<button>Edit</button>
+			{editable ? (
+				<input
+					type='text'
+					value={todoName}
+					placeholder={todo?.name}
+					onChange={(e) => setTodoName(e.target.value)}
+					autoFocus='on'
+				/>
+			) : (
+				<h2>{todo?.name}</h2>
+			)}
+
+			<button
+				onClick={() => {
+					dispatch(
+						updateTodo({
+							...todo,
+							name: todoName,
+						})
+					);
+					if (editable) setTodoName(todo.name);
+					setEditable(!editable);
+				}}>
+				{editable ? 'Update' : 'Edit'}
+			</button>
 			<button onClick={() => dispatch(deleteTodo(todo?.id))}>Delete</button>
 		</div>
 	);
