@@ -6,3 +6,17 @@
 	display: flex;
 	justify-content: center;
 }
+
+button {
+	border: 1px solid #ccc;
+	padding: 0.5rem 1rem;
+	border-radius: 0.25rem;
+	outline: none;
+}
+
+input {
+	padding: 0.5rem;
+	border-radius: 0.25rem;
+	border: 1px solid #ccc;
+	outline: none;
+}

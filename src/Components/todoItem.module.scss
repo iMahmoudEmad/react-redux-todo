@@ -5,11 +5,38 @@
 	margin-top: 1.5rem;
 	padding: 1rem;
 	overflow: hidden;
+	border-radius: 0.25rem;
+	transition: box-shadow 0.2s ease-in-out;
+	min-height: 115px;
+
+	&:hover {
+		box-shadow: 0 0 1rem 0 rgba(#000, 0.15), 0 1rem 1rem 0 rgba(#000, 0.15);
+	}
 
 	h2 {
 		margin-top: 0;
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
+	}
+
+	.btn {
+		cursor: pointer;
+		background-color: transparent;
+
+		&:first-of-type {
+			margin-right: 1rem;
+		}
+
+		&.delete {
+			background: #d9534f;
+			color: #fff;
+			border: 1px solid #d9534f;
+		}
+	}
+
+	input {
+		width: 100%;
+		margin-bottom: 1rem;
 	}
 }

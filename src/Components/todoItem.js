@@ -28,6 +28,7 @@ const TodoItem = ({ todo }) => {
 			)}
 
 			<button
+				className={styles.btn}
 				onClick={() => {
 					dispatch(
 						updateTodo({
@@ -40,7 +41,11 @@ const TodoItem = ({ todo }) => {
 				}}>
 				{editable ? 'Update' : 'Edit'}
 			</button>
-			<button onClick={() => dispatch(deleteTodo(todo?.id))}>Delete</button>
+			<button
+				className={`${styles.delete} ${styles.btn}`}
+				onClick={() => dispatch(deleteTodo(todo?.id))}>
+				Delete
+			</button>
 		</div>
 	);
 };
